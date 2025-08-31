@@ -57,7 +57,7 @@ const result = await Promise.allSettled([
   emit('client/src/script.ts', 'public/script.bundle.js'),
 
   download(
-    'https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css',
     'public/github-markdown.min.css',
     (uint8array) => {
       return new TextEncoder().encode(
@@ -69,12 +69,12 @@ const result = await Promise.allSettled([
   ),
 
   download(
-    'https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js',
+    'https://cdn.jsdelivr.net/npm/mermaid@11.10.1/dist/mermaid.min.js',
     'public/mermaid.min.js',
   ),
 
   download(
-    'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
+    'https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css',
     'public/katex.min.css',
   ),
 
@@ -101,7 +101,7 @@ const result = await Promise.allSettled([
     'KaTeX_Typewriter-Regular.woff2',
   ].map((font) =>
     download(
-      `https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/fonts/${font}`,
+      `https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/fonts/${font}`,
       `public/fonts/${font}`,
     )
   ),
