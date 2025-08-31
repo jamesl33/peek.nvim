@@ -5,6 +5,7 @@ import { default as highlight } from 'https://cdn.skypack.dev/highlight.js@11.9.
 import MarkdownIt from 'https://esm.sh/markdown-it@14.0.0';
 import { full as MarkdownItEmoji } from 'https://esm.sh/markdown-it-emoji@3.0.0';
 import { default as MarkdownItFootnote } from 'https://esm.sh/markdown-it-footnote@4.0.0';
+import { default as MarkdownItFrontMatter } from 'https://esm.sh/markdown-it-front-matter@0.2.4';
 import { default as MarkdownItTaskLists } from 'https://esm.sh/markdown-it-task-lists@2.1.1';
 import { default as MarkdownItTexmath } from 'https://esm.sh/markdown-it-texmath@1.0.0';
 import Katex from 'https://esm.sh/katex@0.16.9';
@@ -29,6 +30,7 @@ const md = new MarkdownIt('default', {
   }),
 }).use(MarkdownItEmoji)
   .use(MarkdownItFootnote)
+  .use(MarkdownItFrontMatter, function(fm) {  })
   .use(MarkdownItTaskLists, { enabled: false, label: true })
   .use(MarkdownItTexmath, {
     engine: Katex,
@@ -38,7 +40,7 @@ const md = new MarkdownIt('default', {
       strict: false,
       throwOnError: false,
     },
-  });
+	});
 
 md.renderer.rules.link_open = (tokens, idx, options) => {
   const token = tokens[idx];
