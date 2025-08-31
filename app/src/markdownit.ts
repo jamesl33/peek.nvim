@@ -4,6 +4,7 @@ import { default as highlight } from 'https://cdn.skypack.dev/highlight.js@11.9.
 // @deno-types="https://esm.sh/v135/@types/markdown-it@13.0.7/index.d.ts";
 import MarkdownIt from 'https://esm.sh/markdown-it@14.0.0';
 import { full as MarkdownItEmoji } from 'https://esm.sh/markdown-it-emoji@3.0.0';
+import { default as MarkdownItDeflist } from 'https://esm.sh/markdown-it-deflist@3.0.0';
 import { default as MarkdownItFootnote } from 'https://esm.sh/markdown-it-footnote@4.0.0';
 import { default as MarkdownItFrontMatter } from 'https://esm.sh/markdown-it-front-matter@0.2.4';
 import { default as MarkdownItTaskLists } from 'https://esm.sh/markdown-it-task-lists@2.1.1';
@@ -29,6 +30,7 @@ const md = new MarkdownIt('default', {
     return '';
   }),
 }).use(MarkdownItEmoji)
+  .use(MarkdownItDeflist)
   .use(MarkdownItFootnote)
   .use(MarkdownItFrontMatter, function(fm) {  })
   .use(MarkdownItTaskLists, { enabled: false, label: true })
